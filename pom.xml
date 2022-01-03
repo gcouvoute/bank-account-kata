@@ -18,6 +18,13 @@
     <properties>
         <java.version>11</java.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <sonar.coverage.exclusions>
+            gcouvoute.kata.bankaccountkata.web.requests,
+            gcouvoute.kata.bankaccountkata.web.responses,
+            gcouvoute.kata.bankaccountkata.service.dtos,
+            gcouvoute.kata.bankaccountkata.datasource.entities
+        </sonar.coverage.exclusions>
+        <sonar.cpd.exclusions>${sonar.coverage.exclusions}</sonar.cpd.exclusions>
     </properties>
 
     <dependencies>
@@ -93,6 +100,14 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.7</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/bankaccountkata/web/requests/*</exclude>
+                        <exclude>**/bankaccountkata/web/responses/*</exclude>
+                        <exclude>**/bankaccountkata/service/dtos/*</exclude>
+                        <exclude>**/bankaccountkata/datasource/entities/*</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>

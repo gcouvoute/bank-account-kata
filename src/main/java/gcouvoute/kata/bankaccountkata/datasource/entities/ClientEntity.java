@@ -1,7 +1,6 @@
 package gcouvoute.kata.bankaccountkata.datasource.entities;
 
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,7 +12,6 @@ import java.util.List;
 public class ClientEntity {
 
     @Id
-    @GenericGenerator(name = "uuid", strategy = "uuid4")
     @Column(name = "ID", unique = true, nullable = false)
     private String id;
 

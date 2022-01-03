@@ -1,11 +1,12 @@
 package gcouvoute.kata.bankaccountkata.web.requests;
 
-import lombok.Value;
-import lombok.With;
+import lombok.Data;
 
-@With
-@Value
+import javax.validation.constraints.NotBlank;
+
+@Data
 public class BankClientCreationRequest {
 
+    @NotBlank(message = "Empty name")
     String name;
 }

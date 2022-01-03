@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClientRepository extends JpaRepository<ClientEntity, String> {
+
+    boolean existsByIdAndStatus(String id, ClientEntity.Status status);
 }
